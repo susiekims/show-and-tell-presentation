@@ -6,7 +6,7 @@ class Input extends Component {
       super(props)
       this.state = {
         items: this.props.items,
-        value: '',
+        value: ''
       }
     }
 
@@ -25,7 +25,16 @@ class Input extends Component {
       return (
         <ReactAutocomplete 
           items={itemArray}
-          shouldItemRender={(item, value) => item.label.toLowerCase().indexOf(value.toLowerCase()) > -1}
+          shouldItemRender={(item, value) => {
+            if (this.props.name === 'cohort') {
+              if (value.length > 3) {
+                console.log(value);
+                return item.label.toLowerCase().indexOf(value.toLowerCase()) > -1 
+              } 
+            } else {
+              return item.label.toLowerCase().indexOf(value.toLowerCase()) > -1 
+            }
+          }}
           getItemValue={item => item.label}
           renderItem={(item, isHighlighted) =>
             <div style={{ 
