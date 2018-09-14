@@ -123,7 +123,7 @@ class App extends Component {
                   <li>Modular and reusable</li>
                   <li>Minimizes user error (which means less error handling!)</li>
                 </ul>
-              <a className="scroll" href="#tend"><i className="fa fa-angle-down"></i></a>
+              <a className="scroll" href="#end"><i className="fa fa-angle-down"></i></a>
             </div>
           </section>
 
